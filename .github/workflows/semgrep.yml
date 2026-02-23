@@ -1,3 +1,4 @@
+
 on:
   pull_request: {}
   push:
@@ -16,7 +17,7 @@ jobs:
     env:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
     container:
-      image: returntocorp/semgrep
+      image: returntocorp/semgrep:v0.94.0
     steps:
     - uses: actions/checkout@v3
     - run: semgrep ci
